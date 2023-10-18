@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/@swimlane/ngx-datatable/index.css';
+@import '../node_modules/@swimlane/ngx-datatable/themes/material.scss';
+@import '../node_modules/@swimlane/ngx-datatable/assets/icons.css';
+
+#LoginForm {
+    background-image: url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+}
