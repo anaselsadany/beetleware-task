@@ -4,6 +4,7 @@ import { ColumnMode, DatatableComponent, TableColumn } from '@swimlane/ngx-datat
 import { FAKE_DATA } from 'src/app/data/data';
 import { AuthService } from 'src/app/services/auth.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private _auth: AuthService,
     private _router: Router,
+    private _toastr: ToastrService,
     private _modal: BsModalService) {
     document.body.id = 'HomePage';
     this.userRole = this._auth.userData()?.role || 'user';
@@ -29,13 +31,23 @@ export class HomeComponent implements OnInit {
   saveUserData(user: any) {
     if (user?.id) {
       console.log('update', user);
+      let userData = this.temp.find(el => el.id == user.id);
+      userData.name = user.name;
+      userData.email = user.email;
+      userData.phone = user.phone;
     } else {
-      console.log('create', user);
+      this.temp.push(user);
     }
+
+    this.rows = this.temp;
+    this._toastr.success('User Saved Successfully', 'User Data');
   }
 
   deleteUser(user: any) {
     console.log('delete', user);
+    this.temp.splice(this.temp.findIndex(el => el.id == user.id), 1);
+    this.rows = this.temp;
+    this._toastr.success('User Deleted Successfully', 'User Delete')
   }
 
   //#region popup form
