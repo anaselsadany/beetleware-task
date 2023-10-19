@@ -36,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgxDatatableModule,
     ModalModule.forRoot(),
     TranslateModule.forRoot({
+      defaultLanguage: 'en',
       loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,

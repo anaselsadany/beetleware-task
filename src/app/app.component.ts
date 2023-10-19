@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'beetleware-task';
   lang:any
   constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
     if("language" in localStorage) {
       this.lang = localStorage.getItem('language')
       translate.use(this.lang);
