@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'beetleware-task';
+  lang:any
+  constructor(private translate: TranslateService) {
+    if("language" in localStorage) {
+      this.lang = localStorage.getItem('language')
+      translate.use(this.lang);
+    }else {
+      translate.use(this.translate.defaultLang);
+    }
+   
+  }
 }

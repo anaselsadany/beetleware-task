@@ -1,0 +1,23 @@
+{
+    "welcome": "Welcome",
+    "AddNew": "Add New",
+    "Logout": "LogOut",
+    "Delete": "Delete",
+    "Update": "Update",
+    "Action": "Action",
+    "Name": "Name",
+    "Email": "Email",
+    "Phone": "Phone",
+    "status": "Status",
+    "UserDeletedSuccess": "User Deleted Successfully",
+    "UserDelete": "User Delete",
+    "Submit": "Submit",
+    "Discard": "Discard",
+    "FieldIsRequired": "Field is required",
+    "EmailValidation": "Please enter a valid email address",
+    "PhoneValidation": "Please enter a valid phone number",
+    "UserSavedSuccessfully": "User Saved Successfully",
+    "UserData": "User Data",
+    "FilterNameColumn": "Filter the name column..."
+
+}

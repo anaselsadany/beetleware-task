@@ -1,25 +1,41 @@
 <div class="container mt-3">
-    <h1 class="text-center text-info">Welcome, {{userRole | titlecase}}</h1>
+    <!-- Title with user role -->
+    <h1 class="text-center text-info">{{ 'welcome' | translate }}, {{userRole | titlecase}}</h1>
 
-    <button class="btn btn-danger px-4 mx-2" (click)="logout()">Logout</button>
-    <button class="btn btn-primary px-4 mx-2" (click)="addNew(formTemplate)" *ngIf="userRole === 'admin'">Add
-        New</button>
+    <!-- Language switch button -->
+    <button class="btn btn-info mx-1" (click)="changeLanguage()">
+        {{ lang === 'en' ? 'عربي' : 'English' }}
+    </button>
+
+    <!-- Logout button (with translation) -->
+    <button class="btn btn-danger px-4 mx-2" (click)="logout()">{{ 'Logout' | translate }}</button>
+
+    <!-- Add New button (with translation) - shown only for admin -->
+    <button class="btn btn-primary px-4 mx-2" (click)="addNew(formTemplate)" *ngIf="userRole === 'admin'">
+        {{ 'AddNew' | translate }}</button>
 
     <div>
+        <!-- Filter input field -->
         <input type="text" class="form-control" style="padding:8px;margin:15px auto;width:30%;"
-            placeholder="Type to filter the name column..." (keyup)="updateFilter($event)" />
-        <ngx-datatable #table class="material" [columns]="columns" [columnMode]="ColumnMode.force" [headerHeight]="50"
-            [footerHeight]="50" rowHeight="auto" [limit]="10" [rows]="rows"></ngx-datatable>
+            placeholder="{{ 'FilterNameColumn' | translate }}" (keyup)="updateFilter($event)" />
 
+        <!-- Data table -->
+        <ngx-datatable #table class="material" [columns]="columns" [columnMode]="ColumnMode.force" [headerHeight]="50"
+            [footerHeight]="50" rowHeight="auto" [limit]="5" [rows]="rows">
+        </ngx-datatable>
     </div>
 </div>
-<ng-template #hdrTpl let-column="column">{{ column.name }}</ng-template>
 
+<!-- Header template for table columns (with translation) -->
+<ng-template #hdrTpl let-column="column">{{ column.name | translate }}</ng-template>
+
+<!-- Edit and Delete buttons template (with translation) -->
 <ng-template #editTmpl let-row="row" let-value="value">
-    <button class="btn btn-sm btn-dark mx-1" (click)="updateDat(row, formTemplate)">Update</button>
-    <button class="btn btn-sm btn-danger mx-1" (click)="deleteUser(row)">Delete</button>
+    <button class="btn btn-sm btn-dark mx-1" (click)="updateDat(row, formTemplate)">{{ 'Update' | translate }}</button>
+    <button class="btn btn-sm btn-danger mx-1" (click)="deleteUser(row)">{{ 'Delete' | translate }}</button>
 </ng-template>
 
+<!-- Form template for adding/updating user (with translation) -->
 <ng-template #formTemplate>
     <div class="modal-header">
         <h4 class="modal-title pull-left">{{selectedUser ? 'Update' : 'Add'}} User</h4>

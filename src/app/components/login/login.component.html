@@ -1,30 +1,32 @@
 <div class="container">
-    <h1 class="form-heading">login Form</h1>
+    <!-- Form heading -->
+    <h1 class="form-heading">{{ 'LoginForm' | translate }}</h1>
     <div class="login-form">
         <div class="main-div">
             <div class="panel">
-                <h2>App Login</h2>
-                <p>Please enter your email and password</p>
+                <!-- Login title and description -->
+                <h2>{{ 'AppLogin' | translate }}</h2>
+                <p>{{ 'EnterEmailPassword' | translate }}</p>
             </div>
             <form id="Login" [formGroup]="loginForm" (ngSubmit)="login()">
-
+                <!-- Email input field -->
                 <div class="form-group">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email Address"
-                        formControlName="email">
+                    <input type="email" class="form-control" id="inputEmail"
+                        placeholder="{{ 'EmailAddress' | translate }}" formControlName="email">
                 </div>
-
+                <!-- Password input field -->
                 <div class="form-group">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password"
-                        formControlName="password">
+                    <input type="password" class="form-control" id="inputPassword"
+                        placeholder="{{ 'Password' | translate }}" formControlName="password">
                 </div>
-
+                <!-- Forgot password link -->
                 <div class="forgot">
-                    <a href="javascript:void(0)">Forgot password?</a>
+                    <a href="javascript:void(0">{{ 'ForgotPassword' | translate }}</a>
                 </div>
-                <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
-
+                <!-- Login button (disabled when the form is invalid) -->
+                <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">{{ 'Login' | translate
+                    }}</button>
             </form>
         </div>
     </div>
-
 </div>

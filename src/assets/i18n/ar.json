@@ -1,0 +1,23 @@
+{
+    "welcome": "مرحبًا",
+    "AddNew": "إضافة جديد",
+    "Logout": "تسجيل الخروج",
+    "Delete": "حذف",
+    "Update": "تعديل",
+    "Name": "الاسم",
+    "Email": "البريد الالكترونى",
+    "Phone": "رقم الهاتف",
+    "status": "الحالة",
+    "Action": "الاجراءات",
+    "UserDeletedSuccess": "تم حذف المستخدم بنجاح",
+    "UserDelete": "حذف المستخدم",
+    "Submit": "حفظ",
+    "Discard": "تجاهل",
+    "FieldIsRequired": "هذا الحقل مطلوب",
+    "EmailValidation": "الرجاء إدخال عنوان بريد إلكتروني صحيح",
+    "PhoneValidation": "الرجاء إدخال رقم هاتف صحيح",
+    "UserSavedSuccessfully": "تم حفظ المستخدم بنجاح",
+    "UserData": "بيانات المستخدم",
+    "FilterNameColumn": "قم بتصفية عمود الاسم..."
+
+}
